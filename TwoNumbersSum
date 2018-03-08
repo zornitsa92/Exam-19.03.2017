@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TwoNumbersSum
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int startN = int.Parse(Console.ReadLine());
+            int endN = int.Parse(Console.ReadLine());
+            int magicN = int.Parse(Console.ReadLine());
+            int combinations = 0;
+
+            for (int i = startN; i >= endN; i--)
+            {
+                for (int j = startN; j >= endN; j--)
+                {
+                    combinations++;
+                    if (i + j == magicN)
+                    {
+                        Console.WriteLine($"Combination N:{combinations} ({i} + {j} = {magicN})");
+                        return;
+                    }
+                }
+            }
+            Console.WriteLine($"{combinations} combinations - neither equals {magicN}");
+        }
+    }
+}
