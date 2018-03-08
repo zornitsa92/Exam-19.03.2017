@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Styrofoam
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double budget = double.Parse(Console.ReadLine());
+            double area = double.Parse(Console.ReadLine());
+            int windows = int.Parse(Console.ReadLine());
+            double pack = double.Parse(Console.ReadLine());
+            double price = double.Parse(Console.ReadLine());
+
+            double a = area - (windows * 2.4);
+            double b = a + (a * 0.1);
+            double c = Math.Ceiling(b/pack);
+            double totalPrice = price * c;
+
+            if (totalPrice <= budget)
+            {
+                double diff = budget - totalPrice;
+                Console.WriteLine($"Spent: {totalPrice:f2}");
+                Console.WriteLine($"Left: {diff:f2}");
+            }
+            else
+            {
+                double diff = totalPrice - budget;
+                Console.WriteLine($"Need more: {diff:f2}");
+            }            
+       }
+    }
+}
