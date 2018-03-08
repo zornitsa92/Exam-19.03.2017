@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TruckDriver
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string season = Console.ReadLine();
+            double km = double.Parse(Console.ReadLine());
+
+            double price = 0;
+            switch (season)
+            {
+                case "Spring":
+                case "Autumn":
+                    if (km <= 5000)
+                    {
+                        price = 0.75;
+                    }
+                    else if (km <= 10000)
+                    {
+                        price = 0.95;
+                    }
+                    else 
+                    {
+                        price = 1.45;
+                    }
+                    break;
+                case "Summer":
+                    if (km <= 5000)
+                    {
+                        price = 0.90;
+                    }
+                    else if (km <= 10000)
+                    {
+                        price = 1.10;
+                    }
+                    else
+                    {
+                        price = 1.45;
+                    }
+                    break;
+                case "Winter":
+                    if (km <= 5000)
+                    {
+                        price = 1.05;
+                    }
+                    else if (km <= 10000)
+                    {
+                        price = 1.25;
+                    }
+                    else
+                    {
+                        price = 1.45;
+                    }
+                    break;
+            }
+            double a = km * price * 4;
+            double total = a - (a * 0.1);
+            Console.WriteLine($"{total:f2}");
+
+        }
+    }
+}
