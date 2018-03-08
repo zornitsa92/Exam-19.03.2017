@@ -1,0 +1,28 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace GrapeAndRakia
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double vineyard = double.Parse(Console.ReadLine());
+            double kg = double.Parse(Console.ReadLine());
+            double brak = double.Parse(Console.ReadLine());
+
+            double a = (vineyard * kg) - brak;
+            double forRakia = (a * 0.45)/7.5;
+            double incomeRakia = forRakia * 9.8;
+
+            double income = (a * 0.55) * 1.5;
+
+            Console.WriteLine($"{incomeRakia:f2}");
+            Console.WriteLine($"{income:f2}");
+
+        }
+    }
+}
