@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Bills
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int months = int.Parse(Console.ReadLine());
+
+            const double waterBill = 20;
+            const double internetBill = 15;
+            double otherBills = 0;
+
+            double water = 0;
+            double internet = 0;
+            double electricity = 0;
+            double other = 0;
+
+            for (int i = 1; i <= months; i++)
+            {
+                double num = double.Parse(Console.ReadLine());
+
+                electricity += num;
+                water += waterBill;
+                internet += internetBill;
+                otherBills = (num + waterBill + internetBill) * 1.2;
+                other += otherBills;
+            }                       
+            double average = (electricity + water + internet + other) / months;
+
+            Console.WriteLine($"Electricity: {electricity:f2} lv");
+            Console.WriteLine($"Water: {water:f2} lv");
+            Console.WriteLine($"Internet: {internet:f2} lv");
+            Console.WriteLine($"Other: {other:f2} lv");
+            Console.WriteLine($"Average: {average:f2} lv");
+             
+        }
+    }
+}
