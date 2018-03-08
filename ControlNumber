@@ -1,0 +1,49 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ControlNumber
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int N = int.Parse(Console.ReadLine());
+            int M = int.Parse(Console.ReadLine());
+            int controlNum = int.Parse(Console.ReadLine());
+
+            int count = 0;
+            int sum = 0;
+            int endSum = 0;
+
+            for (int a = 1; a <= N; a++)
+            {
+                for (int b = M; b >= 1; b--)
+                {
+                    sum = a * 2 + b * 3;
+                    endSum += sum;
+                    count++;
+                    if (endSum >= controlNum)
+                    {
+                        break;
+                    }
+                }
+                if (endSum >= controlNum)
+                {
+                    break;
+                }
+            }
+            if (endSum >= controlNum)
+            {
+                Console.WriteLine("{0} moves", count);
+                Console.WriteLine("Score: {0} >= {1}", endSum, controlNum);
+            }
+            else
+            {
+                Console.WriteLine("{0} moves", count);
+            }
+        }
+    }
+}
