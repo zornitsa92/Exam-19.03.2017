@@ -1,0 +1,31 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace HousePainting
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double x = double.Parse(Console.ReadLine());
+            double y = double.Parse(Console.ReadLine());
+            double h = double.Parse(Console.ReadLine());
+
+            double a = 2 * x * y - (2 * 1.5 * 1.5);
+            double back = x * x;
+            double front = x * x - 2.4;
+            double totalArea = a + back + front;
+            double green = totalArea / 3.4;
+
+            double c = 2 * (x * h / 2);
+            double pokriv = 2 * x * y + c;
+            double red = pokriv / 4.3;
+
+            Console.WriteLine($"{green:f2}");
+            Console.WriteLine($"{red:f2}");
+        }
+    }
+}
